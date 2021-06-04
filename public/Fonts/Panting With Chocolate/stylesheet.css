@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Painting With Chocolate';
+    src: url('PaintingWithChocolate.eot');
+    src: url('PaintingWithChocolate.eot?#iefix') format('embedded-opentype'),
+        url('PaintingWithChocolate.woff2') format('woff2'),
+        url('PaintingWithChocolate.woff') format('woff'),
+        url('PaintingWithChocolate.ttf') format('truetype'),
+        url('PaintingWithChocolate.svg#PaintingWithChocolate') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Cannu';
+    src: url('Cannu-Regular.eot');
+    src: url('Cannu-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Cannu-Regular.woff2') format('woff2'),
+        url('Cannu-Regular.woff') format('woff'),
+        url('Cannu-Regular.ttf') format('truetype'),
+        url('Cannu-Regular.svg#Cannu-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

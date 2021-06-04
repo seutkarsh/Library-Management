@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Hello Pablo';
+    src: url('HelloPablo.eot');
+    src: url('HelloPablo.eot?#iefix') format('embedded-opentype'),
+        url('HelloPablo.woff2') format('woff2'),
+        url('HelloPablo.woff') format('woff'),
+        url('HelloPablo.ttf') format('truetype'),
+        url('HelloPablo.svg#HelloPablo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

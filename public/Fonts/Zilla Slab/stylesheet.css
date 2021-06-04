@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-Italic.eot');
+    src: url('ZillaSlab-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-Italic.woff2') format('woff2'),
+        url('ZillaSlab-Italic.woff') format('woff'),
+        url('ZillaSlab-Italic.ttf') format('truetype'),
+        url('ZillaSlab-Italic.svg#ZillaSlab-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-Bold.eot');
+    src: url('ZillaSlab-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-Bold.woff2') format('woff2'),
+        url('ZillaSlab-Bold.woff') format('woff'),
+        url('ZillaSlab-Bold.ttf') format('truetype'),
+        url('ZillaSlab-Bold.svg#ZillaSlab-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-Medium.eot');
+    src: url('ZillaSlab-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-Medium.woff2') format('woff2'),
+        url('ZillaSlab-Medium.woff') format('woff'),
+        url('ZillaSlab-Medium.ttf') format('truetype'),
+        url('ZillaSlab-Medium.svg#ZillaSlab-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-BoldItalic.eot');
+    src: url('ZillaSlab-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-BoldItalic.woff2') format('woff2'),
+        url('ZillaSlab-BoldItalic.woff') format('woff'),
+        url('ZillaSlab-BoldItalic.ttf') format('truetype'),
+        url('ZillaSlab-BoldItalic.svg#ZillaSlab-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-Light.eot');
+    src: url('ZillaSlab-Light.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-Light.woff2') format('woff2'),
+        url('ZillaSlab-Light.woff') format('woff'),
+        url('ZillaSlab-Light.ttf') format('truetype'),
+        url('ZillaSlab-Light.svg#ZillaSlab-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-LightItalic.eot');
+    src: url('ZillaSlab-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-LightItalic.woff2') format('woff2'),
+        url('ZillaSlab-LightItalic.woff') format('woff'),
+        url('ZillaSlab-LightItalic.ttf') format('truetype'),
+        url('ZillaSlab-LightItalic.svg#ZillaSlab-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-SemiBold.eot');
+    src: url('ZillaSlab-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-SemiBold.woff2') format('woff2'),
+        url('ZillaSlab-SemiBold.woff') format('woff'),
+        url('ZillaSlab-SemiBold.ttf') format('truetype'),
+        url('ZillaSlab-SemiBold.svg#ZillaSlab-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-MediumItalic.eot');
+    src: url('ZillaSlab-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-MediumItalic.woff2') format('woff2'),
+        url('ZillaSlab-MediumItalic.woff') format('woff'),
+        url('ZillaSlab-MediumItalic.ttf') format('truetype'),
+        url('ZillaSlab-MediumItalic.svg#ZillaSlab-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-SemiBoldItalic.eot');
+    src: url('ZillaSlab-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-SemiBoldItalic.woff2') format('woff2'),
+        url('ZillaSlab-SemiBoldItalic.woff') format('woff'),
+        url('ZillaSlab-SemiBoldItalic.ttf') format('truetype'),
+        url('ZillaSlab-SemiBoldItalic.svg#ZillaSlab-SemiBoldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Zilla Slab';
+    src: url('ZillaSlab-Regular.eot');
+    src: url('ZillaSlab-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ZillaSlab-Regular.woff2') format('woff2'),
+        url('ZillaSlab-Regular.woff') format('woff'),
+        url('ZillaSlab-Regular.ttf') format('truetype'),
+        url('ZillaSlab-Regular.svg#ZillaSlab-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

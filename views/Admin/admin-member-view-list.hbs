@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+
+<body>
+    <input type="checkbox"  id="nav-toggle">
+   <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><a href="/admin">
+                <span> <img src="/public/Images/logo-png.png" alt=""/></span>
+               
+                <span>Boeken BookHouse</span> </a></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin" >
+                        <span class="las la-igloo"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/member" class="active">
+                        <span class="las la-users"></span>
+                        <span>Members</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/attendance">
+                        <span class="las la-id-card"></span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/books">
+                        <span class="las la-book-reader"></span>
+                        <span>Books</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class='las la-bars'></span>
+                </label>
+                View Members
+            </h2>
+            <div class="logout-wrapper">
+                
+                <a href="/logout"><h3><span class="las la-power-off"></span>LogOut</h3></a>
+        </div>
+
+        </header>
+
+        <main class="function-page">
+            <div class="list-view-grid">
+                
+                    <div class="main-search-wrapper">
+                        <span class="las la-search"></span>
+                        <input type="search"  id="myInput" onkeyup=myFunction()  placeholder="Search By Member Name" />
+                    </div>
+                
+                
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Members List</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width=100% id="myTable" class="tables">
+                                    <thead>
+                                        <th>Member ID</th>
+                                        <th>Profile Pic</th>
+                                        <th>Member Name</th>
+                                        <th>Member Email</th>
+                                        <th>Gurdian Date</th>
+                                        <th>Date Of Birth</th>
+                                        <th>Gender</th>
+                                        <th>Contact</th>
+                                    </thead>
+
+                                    <tbody>
+                                        {{#each data}}
+                                        <tr>
+                                            <td>{{this.member_id}}</td>
+                                            <td><img src="/uploads/{{this.profile_pic}}" alt="Cover Photo" width="100" height="100"></td>
+                                            <td>{{this.first_name}} {{this.last_name}}</td>
+                                            <td>{{this.email}}</td>
+                                            <td>{{this.gurdians_name}}</td>
+                                            <td>{{this.dob}}</td>
+                                            <td>{{this.gender}}</td>
+                                            <td>{{this.contact}}</td>    
+                                        </tr>
+                                        {{/each}}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+    function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

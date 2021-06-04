@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><a href="/user">
+                    <span> <img src="/public/Images/logo-png.png" alt="" /></span>
+
+                    <span>Boeken BookHouse</span> </a></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/user">
+                        <span class="las la-igloo"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/booksavailable">
+                        <span class="las la-book-reader"></span>
+                        <span>Books Available</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/books-under-me">
+                        <span class="las la-book-open"></span>
+                        <span>Books Under Me</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/bookrequest">
+                        <span class="las la-book"></span>
+                        <span>Request Books</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/profile" class="active">
+                        <span class="las la-user"></span>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class='las la-bars'></span>
+                </label>
+                Profile
+            </h2>
+            <div class="logout-wrapper">
+
+                <a href="/logout">
+                    <h3><span class="las la-power-off"></span>LogOut</h3>
+                </a>
+            </div>
+
+        </header>
+
+        <main class="function-page">
+
+            <div class="user-profile">
+
+                {{#if info}}
+                <div class="alert alert-primary">
+
+                    <div>
+                        <img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+                        <span>{{info}}</span>
+                    </div>
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {{/if}}
+                {{#if warning}}
+                <div class="alert alert-warning">
+
+                    <div>
+                        <img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+                        <span>{{warning}}</span>
+                    </div>
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {{/if}}
+                {{#if danger}}
+                <div class="alert alert-danger">
+
+                    <div>
+                        <img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+                        <span>{{danger}}</span>
+                    </div>
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {{/if}}
+                {{#if success}}
+                <div class="alert alert-success">
+
+                    <div>
+                        <img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+                        <span>{{success}}</span>
+                    </div>
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {{/if}}
+                <div class="profile">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Profile</h3>
+                            <button onclick=myFunction()><span class="las la-arrow-right"></span>Change
+                                Password</button>
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="profile-pic-section">
+                                <div>
+                                    <div class="profile-img">
+                                        <img src="{{image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="options">
+                                    <button id="profile-pic-change-modal">
+                                        <span class="las la-edit"></span>
+                                    </button>
+
+                                    <div id="myModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <div id='changeImageForm'>
+                                                <form action="/auth/change_image" method="POST"
+                                                    enctype="multipart/form-data" class=" changeImageForm">
+                                                    <div class="file-input">
+                                                        <input type="file" id="file" class="file" name='image'
+                                                            accept="image/*">
+                                                        <label for="file">Select file<p class="file-name"></p></label>
+                                                    </div>
+                                                    <div>
+                                                        {{!-- {{#if info}}
+                                                        <div class="alert alert-primary">
+
+                                                            <div>
+                                                                <img src="/public/Images/Alert/info.svg" alt=""
+                                                                    style="fill: currentColor;">
+                                                                <span>{{info}}</span>
+                                                            </div>
+                                                            <span class="closebtn"
+                                                                onclick="this.parentElement.style.display='none';">&times;</span>
+                                                        </div>
+                                                        {{/if}}
+                                                        {{#if warning}}
+                                                        <div class="alert alert-warning">
+
+                                                            <div>
+                                                                <img src="/public/Images/Alert/warning.svg" alt=""
+                                                                    style="fill: currentColor;">
+                                                                <span>{{warning}}</span>
+                                                            </div>
+                                                            <span class="closebtn"
+                                                                onclick="this.parentElement.style.display='none';">&times;</span>
+                                                        </div>
+                                                        {{/if}}
+                                                        {{#if danger}}
+                                                        <div class="alert alert-danger">
+
+                                                            <div>
+                                                                <img src="/public/Images/Alert/danger.svg" alt=""
+                                                                    style="fill: currentColor;">
+                                                                <span>{{danger}}</span>
+                                                            </div>
+                                                            <span class="closebtn"
+                                                                onclick="this.parentElement.style.display='none';">&times;</span>
+                                                        </div>
+                                                        {{/if}}
+                                                        {{#if success}}
+                                                        <div class="alert alert-success">
+
+                                                            <div>
+                                                                <img src="/public/Images/Alert/success.svg" alt=""
+                                                                    style="fill: currentColor;">
+                                                                <span>{{success}}</span>
+                                                            </div>
+                                                            <span class="closebtn"
+                                                                onclick="this.parentElement.style.display='none';">&times;</span>
+                                                        </div>
+                                                        {{/if}} --}}
+                                                    </div>
+                                                    <div class="profile-pic-change-btn">
+                                                        <input type="submit" value="upload" class="input-btn">
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <form action="/auth/remove_image" method="POST">
+                                        <button>
+                                            <span class="las la-trash"></span>
+                                        </button>
+                                    </form>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="card-body">
+                            <div class="base-details">
+                                <div class="basic-detail">
+                                    <div class="name-div">
+                                        <div>
+                                            <span class="las la-user-circle"></span>
+                                            <span>Name</span>
+                                        </div>
+                                        <div>
+                                            {{name}}
+                                        </div>
+                                    </div>
+
+                                    <div class="email-div">
+                                        <div>
+                                            <span class="las la-at"></span>
+                                            <span>Email</span>
+                                        </div>
+                                        <div>
+                                            {{email}}
+                                        </div>
+                                    </div>
+
+                                    <div class="gender-div">
+                                        <div>
+                                            <span class="las la-smile"></span>
+                                            <span>Gender</span>
+                                        </div>
+                                        <div>
+                                        {{gender}}
+                                        </div>
+                                    </div>
+                                    <div class="dob-div">
+                                        <div>
+                                            <span class="las la-calendar"></span>
+                                            <span>DOB</span>
+                                        </div>
+                                        <div>
+                                        {{dob}}
+                                        </div>
+                                    </div>
+                                    <div class="cont-div">
+                                        <div>
+                                            <span class="las la-phone"></span>
+                                            <span>Contact</span>
+                                        </div>
+                                        <div>
+                                        {{contact}}
+                                        </div>
+                                    </div>
+                                    <div class="e-cont-div">
+                                        <div>
+                                            <span class="las la-phone-alt"></span>
+                                            <span>Emergency Contact</span>
+                                        </div>
+                                        <div>
+                                        {{emergencycontact}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cont-details">
+
+                                    <div class="gurdian-div">
+                                        <span class="las la-chess-knight"></span>
+                                        <span>Gurdian: </span>
+                                    </div>
+                                    <div class="gurdian-div">
+                                        {{gurdianname}}
+                                    </div>
+                                    <div class="p-add-div">
+                                        <span class="las la-home"></span>
+                                        <span>Permanent Address: </span>
+                                    </div>
+                                    <div class="p-add-div">
+                                        {{peradd}}
+                                    </div>
+
+
+                                    <div class="t-add-div">
+                                        <span class="las la-home"></span>
+                                        <span>Temperory Address: </span>
+                                    </div>
+                                    <div class="t-add-div">
+                                        {{tempadd}}
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="password-window" id="user-profile-ps-chng-window">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Change Password</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="profile-pic-section">
+                                <div>
+                                    <div class="profile-p-chng">
+                                        <img src="/public/Images/logo-png.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="head">
+                                    <span>Boeken Bookhouse</span>
+                                </div>
+
+                            </div>
+
+                            <form action='/auth/update_password' method="POST"
+                                class="user-profile-ps-chng-form form-control"
+                                style="flex-direction: column; justify-content: center ;">
+                                <div>
+                                    <input type="password" placeholder="Current Password" name='currentpassword'
+                                        id="currentpassword">
+                                </div>
+                                <div class="i">
+                                    <i class="las la-eye-slash eye-icon" id="current-password-eye-toggle-slash"></i>
+                                    <i class="las la-eye eye-icon" id="current-password-eye-toggle"></i>
+
+                                </div>
+                                <div>
+                                    <input type="password" placeholder="New Password" name='newpassword'
+                                        id="newpassword">
+                                </div>
+                                <div class="i">
+                                    <i class="las la-eye-slash eye-icon" id="new-password-eye-toggle-slash"></i>
+                                    <i class="las la-eye eye-icon" id="new-password-eye-toggle"></i>
+
+                                </div>
+                                <div>
+                                    <input type="password" placeholder="Confirm New Password" name='confirmnewpassword'
+                                        id="confirmnewpassword">
+                                </div>
+                                <div class="i">
+                                    <i class="las la-eye-slash eye-icon" id="confirm-new-password-eye-toggle-slash"></i>
+                                    <i class="las la-eye eye-icon" id="confirm-new-password-eye-toggle"></i>
+
+                                </div>
+                                <div class="pw-div">
+                                    <label style="margin: 0 auto;" for="user-profile-password-window-toggle"><button
+                                            style="width: 100%;">Change
+                                            Password</button></label>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="/public/js/modal.js"></script>
+    <script src="/public/js/file-input.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("user-profile-ps-chng-window");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function showForm() {
+            var x = document.getElementById("changeImageForm");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <script type="text/javascript" src="/public/js/input-design.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script>
+
+        const currentpasswordeyeToggleSlash = document.querySelector("#current-password-eye-toggle-slash");
+        const currentpasswordeyeToggle = document.querySelector("#current-password-eye-toggle");
+        const currentpassword = document.querySelector('#currentpassword');
+
+        const newpasswordeyeToggleSlash = document.querySelector("#new-password-eye-toggle-slash");
+        const newpasswordeyeToggle = document.querySelector("#new-password-eye-toggle");
+        const newpassword = document.querySelector('#newpassword');
+
+        const confirmnewpasswordeyeToggleSlash = document.querySelector("#confirm-new-password-eye-toggle-slash");
+        const confirmnewpasswordeyeToggle = document.querySelector("#confirm-new-password-eye-toggle");
+        const confirmnewpassword = document.querySelector('#confirmnewpassword');
+
+        currentpasswordeyeToggleSlash.addEventListener('click', function () {
+            currentpassword.setAttribute('type', 'text')
+            currentpasswordeyeToggleSlash.style.visibility = "hidden";
+            currentpasswordeyeToggle.style.visibility = "visible";
+        });
+
+        currentpasswordeyeToggle.addEventListener('click', function () {
+            currentpassword.setAttribute('type', 'password')
+            currentpasswordeyeToggleSlash.style.visibility = "visible";
+            currentpasswordeyeToggle.style.visibility = "hidden";
+        });
+
+
+        newpasswordeyeToggleSlash.addEventListener('click', function () {
+            newpassword.setAttribute('type', 'text')
+            newpasswordeyeToggleSlash.style.visibility = "hidden";
+            newpasswordeyeToggle.style.visibility = "visible";
+        });
+
+        newpasswordeyeToggle.addEventListener('click', function () {
+            newpassword.setAttribute('type', 'password')
+            newpasswordeyeToggleSlash.style.visibility = "visible";
+            newpasswordeyeToggle.style.visibility = "hidden";
+        });
+
+
+        confirmnewpasswordeyeToggleSlash.addEventListener('click', function () {
+            confirmnewpassword.setAttribute('type', 'text')
+            confirmnewpasswordeyeToggleSlash.style.visibility = "hidden";
+            confirmnewpasswordeyeToggle.style.visibility = "visible";
+        });
+
+        confirmnewpasswordeyeToggle.addEventListener('click', function () {
+            confirmnewpassword.setAttribute('type', 'password')
+            confirmnewpasswordeyeToggleSlash.style.visibility = "visible";
+            confirmnewpasswordeyeToggle.style.visibility = "hidden";
+        });
+    </script>
+</body>
+
+</html>

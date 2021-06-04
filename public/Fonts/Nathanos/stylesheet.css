@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Nathanos';
+    src: url('Nathanos.eot');
+    src: url('Nathanos.eot?#iefix') format('embedded-opentype'),
+        url('Nathanos.woff2') format('woff2'),
+        url('Nathanos.woff') format('woff'),
+        url('Nathanos.ttf') format('truetype'),
+        url('Nathanos.svg#Nathanos') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

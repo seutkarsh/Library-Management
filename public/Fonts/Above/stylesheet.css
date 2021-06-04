@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Above DEMO';
+    src: url('AboveDEMO-Regular.eot');
+    src: url('AboveDEMO-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AboveDEMO-Regular.woff2') format('woff2'),
+        url('AboveDEMO-Regular.woff') format('woff'),
+        url('AboveDEMO-Regular.ttf') format('truetype'),
+        url('AboveDEMO-Regular.svg#AboveDEMO-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

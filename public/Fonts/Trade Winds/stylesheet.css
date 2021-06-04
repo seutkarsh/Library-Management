@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Trade Winds';
+    src: url('TradeWinds.eot');
+    src: url('TradeWinds.eot?#iefix') format('embedded-opentype'),
+        url('TradeWinds.woff2') format('woff2'),
+        url('TradeWinds.woff') format('woff'),
+        url('TradeWinds.ttf') format('truetype'),
+        url('TradeWinds.svg#TradeWinds') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

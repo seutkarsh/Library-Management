@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Trench';
+    src: url('Trench-Thin.eot');
+    src: url('Trench-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Trench-Thin.woff2') format('woff2'),
+        url('Trench-Thin.woff') format('woff'),
+        url('Trench-Thin.ttf') format('truetype'),
+        url('Trench-Thin.svg#Trench-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trench';
+    src: url('Trench-Thin_1.eot');
+    src: url('Trench-Thin_1.eot?#iefix') format('embedded-opentype'),
+        url('Trench-Thin_1.woff2') format('woff2'),
+        url('Trench-Thin_1.woff') format('woff'),
+        url('Trench-Thin_1.ttf') format('truetype'),
+        url('Trench-Thin_1.svg#Trench-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+

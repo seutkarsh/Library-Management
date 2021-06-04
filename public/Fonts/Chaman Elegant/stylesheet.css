@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'CHAMAN ELEGANT FONT';
+    src: url('CHAMANELEGANTFONT-Regular.eot');
+    src: url('CHAMANELEGANTFONT-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CHAMANELEGANTFONT-Regular.woff2') format('woff2'),
+        url('CHAMANELEGANTFONT-Regular.woff') format('woff'),
+        url('CHAMANELEGANTFONT-Regular.ttf') format('truetype'),
+        url('CHAMANELEGANTFONT-Regular.svg#CHAMANELEGANTFONT-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CHAMAN ELEGANT FONT';
+    src: url('CHAMANELEGANTFONT-Regular_1.eot');
+    src: url('CHAMANELEGANTFONT-Regular_1.eot?#iefix') format('embedded-opentype'),
+        url('CHAMANELEGANTFONT-Regular_1.woff2') format('woff2'),
+        url('CHAMANELEGANTFONT-Regular_1.woff') format('woff'),
+        url('CHAMANELEGANTFONT-Regular_1.ttf') format('truetype'),
+        url('CHAMANELEGANTFONT-Regular_1.svg#CHAMANELEGANTFONT-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

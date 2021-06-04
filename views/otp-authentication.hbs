@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/input-design.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="/public/Images/Login/lines.png">
+	<div class="container">
+		<div class="img">
+			<img src="/public/Images/Login/security.svg">
+		</div>
+		<div class="login-content">
+			<form action='/auth/authentication' method="POST">
+				<img src="/public/Images/Login/permission.svg">
+				<h2 class="title">Verify OTP</h2>
+                   <div class="input-div otp">
+                    <div class="i">
+                            <i class="fas fa-key"></i>
+                    </div>
+                    <div class="div">
+                            <h5>OTP</h5>
+                            <input type="text" class="input" name='otp'>
+                    </div>
+                 </div>
+				 {{#if info}}
+				<div class="alert alert-primary">
+					
+					<div>
+						<img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+						<span>{{info}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if warning}}
+				<div class="alert alert-warning">
+					
+					<div>
+						<img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+						<span>{{warning}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if danger}}
+				<div class="alert alert-danger">
+					
+					<div>
+						<img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+						<span>{{danger}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                {{#if success}}
+				<div class="alert alert-success">
+					
+					<div>
+						<img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+						<span>{{success}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				 <input type="submit" class="btn" id='buttonn' value="Authenticate"></a>
+				
+            	
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/public/js/input-design.js"></script>
+</body>
+</html>

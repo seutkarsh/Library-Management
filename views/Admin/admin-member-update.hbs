@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><a href="/admin">
+                    <span> <img src="/public/Images/logo-png.png" alt="" /></span>
+
+                    <span>Boeken BookHouse</span> </a></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <span class="las la-igloo"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/member" class="active">
+                        <span class="las la-users"></span>
+                        <span>Members</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/attendance">
+                        <span class="las la-id-card"></span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/books">
+                        <span class="las la-book-reader"></span>
+                        <span>Books</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class='las la-bars'></span>
+                </label>
+                Update Records
+            </h2>
+            <div class="logout-wrapper">
+
+                <a href="/logout"><h3><span class="las la-power-off"></span>LogOut</h3></a>
+            </div>
+
+        </header>
+
+        <main class="function-page">
+            {{#if info}}
+				<div class="alert alert-primary">
+					
+					<div>
+						<img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+						<span>{{info}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if warning}}
+				<div class="alert alert-warning">
+					
+					<div>
+						<img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+						<span>{{warning}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if danger}}
+				<div class="alert alert-danger">
+					
+					<div>
+						<img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+						<span>{{danger}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                {{#if success}}
+				<div class="alert alert-success">
+					
+					<div>
+						<img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+						<span>{{success}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+            <div class="member-update-grid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Personal Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/auth/updatemember1" method="POST" class="member-update-form form-control">
+                            <div id="member-update-id-div">
+                                <input type="text" placeholder="Member ID" name='memberid'>
+                            </div>
+                            <div id="mem-add-form-id-btn">
+                                <button></span>Update Details</button>
+                            </div>
+                        </form>
+
+
+
+                        <form action="/auth/updatemember2" method="POST" class="member-update-form form-control" style="display:{{#if props}} {{props}} {{else}} none {{/if}}">
+
+                            <div id="member-update-firstname-div">
+                                <label for="">First Name</label>
+                                <input type="text" name='firstname' value="{{firstname}}">
+                            </div>
+                            <div id="member-update-lastname-div">
+                                <label for="">Last Name</label>
+                                <input type="text" name='lastname' value='{{lastname}}' >
+                            </div>
+                            <div id="member-update-email-div">
+                                <label for="">Email ID</label>
+                                <input type="email" name='email' value='{{email}}'>
+                            </div>
+                            <div id="member-update-gurdianname-div">
+                                <label for="">Gurdian's Name</label>
+                                <input type="text"  name='gurdianname' value='{{gurdianname}}'>
+                            </div>
+                            <div id="member-update-dob-div">
+                                <label for="">Date Of Birth</label>
+                                <input type="date" value={{dob}} name="dob">
+                            </div>
+                            <div id='member-update-gender-div' class="form-checkbox" style="flex-direction: row;">
+                                <span>Gender:</span>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender"
+                                        id="inlineRadio1" value="male" {{male}}>
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender"
+                                        id="inlineRadio2" value="female" {{female}} >
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender"
+                                        id="inlineRadio3" value="other" {{other}} >
+                                    <label class="form-check-label" for="inlineRadio3">Other</label>
+                                </div>
+                            </div>
+                            <div id="member-update-tempadd-div">
+                                <label for="">Local Address</label>
+                                <input type="text" name='tempadd' value='{{tempadd}}'>
+                            </div>
+                            <div id="member-update-permadd-div">
+                                <label for="">Permanent address</label>
+                                <input type="text" name='peradd' value='{{peradd}}'>
+                            </div>
+                            <div id="member-update-contact-no-div">
+                                <label for="">Contact No.</label>
+                                <input type="text" name='contactno' value='{{contact}}'>
+                            </div>
+                            <div id="member-update-emer-contact-no-div">
+                                <label for="">Emergency Contact No.</label>
+                                <input type="text" name='emergencycontactno' value='{{emergencycontact}}'>
+                            </div>
+                            <div id="mem-add-form-btn">
+                                <button>Update Details</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

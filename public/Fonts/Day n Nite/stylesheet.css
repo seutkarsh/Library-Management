@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Day n Nite Free Trial';
+    src: url('DayNNiteFreeTrial-Regular.eot');
+    src: url('DayNNiteFreeTrial-Regular.eot?#iefix') format('embedded-opentype'),
+        url('DayNNiteFreeTrial-Regular.woff2') format('woff2'),
+        url('DayNNiteFreeTrial-Regular.woff') format('woff'),
+        url('DayNNiteFreeTrial-Regular.ttf') format('truetype'),
+        url('DayNNiteFreeTrial-Regular.svg#DayNNiteFreeTrial-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Ballistick';
+    src: url('BallistickRegular.eot');
+    src: url('BallistickRegular.eot?#iefix') format('embedded-opentype'),
+        url('BallistickRegular.woff2') format('woff2'),
+        url('BallistickRegular.woff') format('woff'),
+        url('BallistickRegular.ttf') format('truetype'),
+        url('BallistickRegular.svg#BallistickRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

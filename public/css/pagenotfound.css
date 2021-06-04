@@ -1,0 +1,77 @@
+/* fonts  */
+@import url("/public/css/fonts.css");
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+.grid_page_not_found{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+
+
+}
+
+.img_page_not_found{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img_page_not_found > img{
+    width: 80%;
+}
+
+.info_page_not_found{
+    text-align: start;
+    margin: auto;
+    padding-right: 15rem;
+}
+
+.info_page_not_found h1{
+    font-size: 5.2rem;
+    text-transform: capitalize;
+    font-family: 'Trade Winds';
+
+    
+
+}
+
+.info_page_not_found h3{
+    font-family: 'Iceland';
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.info_page_not_found p{
+    margin: 1rem 0;
+    font-family: 'Iceland';
+    font-size: 2rem;
+
+}
+
+.info_page_not_found button{
+    background: red;
+    display: block;
+	width: 35%;
+	height: 40px;
+	border-radius: 15px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to bottom, #ff0000, #b90808, #880505, #5f0505, #270202);;
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins';
+	text-transform: uppercase;
+	margin: 2rem 0;
+	cursor: pointer;
+	transition: .7s;
+}

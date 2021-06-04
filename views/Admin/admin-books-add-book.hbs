@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><a href="/admin">
+                <span> <img src="/public/Images/logo-png.png" alt=""/></span>
+               
+                <span>Boeken BookHouse</span> </a></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin" >
+                        <span class="las la-igloo"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/member">
+                        <span class="las la-users"></span>
+                        <span>Members</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/attendance">
+                        <span class="las la-id-card"></span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/books" class="active">
+                        <span class="las la-book-reader"></span>
+                        <span>Books</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class='las la-bars'></span>
+                </label>
+                Add Book
+            </h2>
+            <div class="logout-wrapper">
+
+                 <a href="/logout"><h3><span class="las la-power-off"></span>LogOut</h3></a>
+            </div>
+
+        </header>
+
+        <main class="function-page">
+            {{#if info}}
+				<div class="alert alert-primary">
+					
+					<div>
+						<img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+						<span>{{info}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if warning}}
+				<div class="alert alert-warning">
+					
+					<div>
+						<img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+						<span>{{warning}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if danger}}
+				<div class="alert alert-danger">
+					
+					<div>
+						<img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+						<span>{{danger}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                {{#if success}}
+				<div class="alert alert-success">
+					
+					<div>
+						<img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+						<span>{{success}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+            <div class="books-add-book-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Add New Book</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action = "/auth/addnewbook" method="POST" enctype="multipart/form-data" class="books-add-book-form form-control">
+                            <div id="books-add-book-name-div" >
+                                <input type="text" id="BookRequest-Nam" placeholder="Book Name" name='bookname'>
+                            </div>
+                            <div  id="books-add-book-author-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Author" name='author'>
+                            </div>
+                            <div id="books-add-book-publisher-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Publisher" name='publisher'>
+                            </div>
+                            <div id="books-add-book-copies-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="No. of Copies" name="copies">
+                            </div>
+                            <div id="books-add-book-edition-div" >
+                                <input type="text" id="BookRequest-Nam" placeholder="Edition" name='edition'>
+                            </div>
+                            <div id="books-add-book-pages-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="No. of Pages" name='noofpages'>
+                            </div>
+                            <div id="books-add-book-genre-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Genre" name='genre'>
+                            </div>
+                            <div id="books-add-book-lang-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Language" name="language">
+                            </div>
+                            <div id="books-add-book-p-date-div">
+                                <input type="text"  onfocus="(this.type='date')" name="purchasedate" class="dob" id="dob" placeholder="Purchase Date">
+                            </div>
+                            <div id="books-add-book-price-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Price" name='price'>
+                            </div>
+                            <div id="books-add-book-seller-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Seller" name='seller'>
+                            </div>
+                            <div id="books-add-book-pic-div">
+                                <input type="file" name="image" accept="image/*">
+                            </div>
+                            <div id="books-add-book-des-div">
+                                <textarea rows="4" style="width: 100%;" id="Description"
+                                    placeholder="Add a description here..." name='description'></textarea>
+                            </div>
+                            <div id="books-add-book-btn-div">
+                                <button >Add Book</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

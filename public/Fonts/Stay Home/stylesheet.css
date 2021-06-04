@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Stay Home';
+    src: url('StayHomeRegular.eot');
+    src: url('StayHomeRegular.eot?#iefix') format('embedded-opentype'),
+        url('StayHomeRegular.woff2') format('woff2'),
+        url('StayHomeRegular.woff') format('woff'),
+        url('StayHomeRegular.ttf') format('truetype'),
+        url('StayHomeRegular.svg#StayHomeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

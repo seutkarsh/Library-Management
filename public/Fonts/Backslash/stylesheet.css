@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Backslash';
+    src: url('BackslashRegular.eot');
+    src: url('BackslashRegular.eot?#iefix') format('embedded-opentype'),
+        url('BackslashRegular.woff2') format('woff2'),
+        url('BackslashRegular.woff') format('woff'),
+        url('BackslashRegular.ttf') format('truetype'),
+        url('BackslashRegular.svg#BackslashRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

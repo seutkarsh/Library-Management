@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><a href="/admin">
+                    <span> <img src="/public/Images/logo-png.png" alt="" /></span>
+
+                    <span>Boeken BookHouse</span> </a></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <span class="las la-igloo"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/member">
+                        <span class="las la-users"></span>
+                        <span>Members</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/attendance">
+                        <span class="las la-id-card"></span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/books" class="active">
+                        <span class="las la-book-reader"></span>
+                        <span>Books</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class='las la-bars'></span>
+                </label>
+                Issue Book
+            </h2>
+            <div class="logout-wrapper">
+
+                 <a href="/logout"><h3><span class="las la-power-off"></span>LogOut</h3></a>
+            </div>
+
+        </header>
+
+        <main class="function-page">
+            {{#if info}}
+				<div class="alert alert-primary">
+					
+					<div>
+						<img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+						<span>{{info}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if warning}}
+				<div class="alert alert-warning">
+					
+					<div>
+						<img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+						<span>{{warning}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if danger}}
+				<div class="alert alert-danger">
+					
+					<div>
+						<img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+						<span>{{danger}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                {{#if success}}
+				<div class="alert alert-success">
+					
+					<div>
+						<img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+						<span>{{success}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+
+            <div class="books-issue-grid">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <form action='/auth/bookissue' method="POST" class="row-form form-control" >
+                            <div id="member-subs-renew-id-div">
+                                <input type="text" id="BookRequest-Nam" placeholder="Member ID" name="memberid">
+                            </div>
+                            <div id='member-subs-renew-s-date-div'>
+                                <input type="text" id="BookRequest-Nam" placeholder="Book ID" name="bookid">
+                            </div>
+                            <div id="member-subs-renew-btn-div">
+                                <button>Issue Book</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+                <div class="card" style="display: {{#if props}} {{props}} {{else}} none;{{/if}}">
+                    <div class="card-header">
+                        <h3>Invoice</h3>
+                        <button onclick="printDiv('print')" class="cursor:pointer">Print <span class="las la-print">
+                            </span></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="invoice-grid" id="print">
+                            <div id='invoice-header-left'>
+                                <strong>{{name}}</strong>
+                                <br />
+                                Member ID: {{memberid}}
+                                <br>
+
+                            </div>
+                            <div id='invoice-header-right'>
+                                <div>Contact No</div>
+                                <strong>{{contact}}</strong>
+                                <br>
+                                <br>
+                                <br>
+                                <div>Issue Date</div>
+                                <strong>{{date}} - {{time}}</strong>
+                            </div>
+                            <div class="form-v-divider"></div>
+                            <div id="invoice-bill">
+                                Book ID:
+                                <strong>
+                                    {{bookid}}
+                                </strong>
+                                <br>
+                                Book Name:
+                                <strong>
+                                    {{bookname}}
+                                </strong>
+                                <br>
+                                Author:
+                                <strong>
+                                    {{author}}
+                                </strong>
+                                <br>
+                                Genre:
+                                <strong>
+                                    {{genre}}
+                                </strong>
+                                <br>
+                                Language:
+                                <strong>
+                                   {{language}}
+                                </strong>
+                                <br>
+                                Edition:
+                                <strong>
+                                    {{edition}}
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+<script>
+		function printDiv(divName){
+			var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
+
+		}
+	</script>
+</body>
+
+
+
+</html>
